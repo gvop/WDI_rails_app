@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Sneakers</h1>
+  <div class="row">
+    <% @sneakers.each do |sneaker| %>
+      <ul>
+        <li><%= sneaker.type_of %></li>
+        <li><%= sneaker.gender %></li>
+        <li><%= sneaker.photo_source %></li>
+        <li><%= sneaker.user.email %></li>
+
+        <li><%= sneaker.make.image %></li>
+        <li><%= image_tag sneaker.make.image %></li>
+
+        <li><%= sneaker.discription %></li>
+
+        <li><%= sneaker.image %></li>
+        <li><%= image_tag sneaker.image %></li>
+
+        <li><%= link_to 'Show', sneaker %></li>
+        <li><%= link_to 'Edit', edit_sneaker_path(sneaker) %></li>
+        <li><%= link_to 'Destroy', sneaker, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+      </ul>
+    <% end %>
+  </div>
+</table>
+
+<br>
+
+<%= link_to 'New Sneaker', new_sneaker_path %>

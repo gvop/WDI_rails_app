@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Sneakers</h1>
+  <div class="row">
+    <% @sneakers.each do |sneaker| %>
+      <ul class="row">
+        <li><%= sneaker.user.email %></li>
+        <li><%= image_tag sneaker.make.image %></li>
+        <li><%= image_tag sneaker.image %></li>
+      </ul>
+    <% end %>
+  </div>
+<br>
+
+<%= link_to 'New Sneaker', new_sneaker_path %>

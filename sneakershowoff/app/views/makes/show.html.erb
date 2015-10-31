@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @make.name %>
+</p>
+
+<p>
+  <strong>Discription:</strong>
+  <%= @make.discription %>
+</p>
+
+<p>
+ <%= image_tag @make.image %> 
+</p>
+
+<%= link_to 'Edit', edit_make_path(@make) %> |
+<%= link_to 'Back', makes_path %>

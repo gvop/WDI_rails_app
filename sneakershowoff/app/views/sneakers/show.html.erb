@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @sneaker.type_of %>
+</p>
+
+<p>
+  <strong>Gender:</strong>
+  <%= @sneaker.gender %>
+</p>
+
+<p>
+  <strong>Photo source:</strong>
+  <%= @sneaker.photo_source %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @sneaker.user.email %>
+</p>
+
+<p>
+  <strong>Make:</strong>
+  <%= @sneaker.make.name %>
+</p>
+
+<p>
+ <%= image_tag @sneaker.image %> 
+</p>
+
+<p>
+  <strong>Discription:</strong>
+  <%= @sneaker.discription %>
+</p>
+
+<%= link_to 'Edit', edit_sneaker_path(@sneaker) %> |
+<%= link_to 'Back', sneakers_path %>

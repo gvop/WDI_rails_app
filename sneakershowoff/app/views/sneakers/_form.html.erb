@@ -1,0 +1,40 @@
+<%= form_for(@sneaker) do |f| %>
+  <% if @sneaker.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@sneaker.errors.count, "error") %> prohibited this sneaker from being saved:</h2>
+
+      <ul>
+      <% @sneaker.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :make_id %><br>
+    <%= f.collection_select :make_id, Make.all, :id, :name  %>
+  </div>
+  <div class="field">
+    <%= f.label :type_of %><br>
+    <%= f.text_field :type_of %>
+  </div>
+  <div class="field">
+    <%= f.label :gender %><br>
+    <%= f.text_field :gender %>
+  </div>
+  <div class="field">
+    <%= f.file_field :image %>
+  </div>
+  <div class="field">
+    <%= f.label :photo_source %><br>
+    <%= f.text_field :photo_source %>
+  </div>
+  <div class="field">
+    <%= f.label :discription %><br>
+    <%= f.text_area :discription %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

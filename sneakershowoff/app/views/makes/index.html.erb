@@ -7,7 +7,15 @@
     <%= link_to(make) do %>
       <div>
         <div class="small-6 large-3 inline-block">
-          <p><%= image_tag make.image %></p>
+          <% @sum = 0 %>
+          <% make.sneakers.each do |value| %>
+           <% @sum += value.get_upvotes.size.to_i %>
+          <% end %>
+          <% if @sum >1 %>
+          <p><%="This brand has #{@sum} likes"%></p>
+          <% else %>
+          <p><%="This brand has #{@sum} like"%></p>
+          <% end %>
         </div>
       </div>
       <div class="row">

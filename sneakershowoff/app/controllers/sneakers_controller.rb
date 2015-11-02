@@ -1,5 +1,5 @@
 class SneakersController < ApplicationController
-  before_action :set_sneaker, only: [:show, :edit, :update, :destroy]
+  before_action :set_sneaker, only: [:show, :edit, :update, :destroy, :upvote]
   before_action :authenticate_user!, :except => [:index]
 
   def index
@@ -49,6 +49,11 @@ class SneakersController < ApplicationController
       format.html { redirect_to sneakers_url, notice: 'Sneaker was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def upvote
+    @sneaker.upvote_by current_user
+    redirect_to :back
   end
 
   private

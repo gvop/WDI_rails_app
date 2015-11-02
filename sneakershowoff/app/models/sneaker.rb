@@ -1,4 +1,5 @@
 class Sneaker < ActiveRecord::Base
+  acts_as_votable
   belongs_to :user
   belongs_to :make
   mount_uploader :image, ImageUploader

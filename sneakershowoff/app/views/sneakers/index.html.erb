@@ -6,7 +6,10 @@
       <%= link_to(sneaker) do %>
         <div class="small-12 large-4 columns text-align-left">
           <div class="th sneaker_callout" style="background-image:url(<%= sneaker.image %>)"></div>
-          <%= image_tag "106005-200.png", class: "sneaker_icon"%>
+          <%= link_to like_sneaker_path(sneaker), method: :put, class: "th margin-bottom" do %>
+            <span class="vote"><%= sneaker.get_upvotes.size %></span>
+            <%= image_tag "106005-200.png", class: "sneaker_icon"%>
+          <% end %>
         </div>
       <% end %>
     <% end %>

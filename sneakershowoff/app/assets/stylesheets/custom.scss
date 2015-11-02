@@ -1,15 +1,50 @@
 body {
   text-align: center;
   padding: 5px;
+  overflow-x:hidden;
+
+  nav ul {
+    li{
+      display: inline-block;
+    }
+  }
+
+  .inline-block {
+    display: inline-block;
+  }
+
+  .sneaker_callout {
+    display: inline-block;
+    width: 100%;
+    padding: 8rem 0 8rem;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .micro_padding {
+    padding: 1rem;
+  }
+
+  .sneaker_icon {
+    width: 50px;
+  }
 }
 
-.sneaker_callout {
-  width: 100%;
-  padding: 8rem 0 8rem;
-  background-size: cover;
-  background-position: center;
+// DRY
+
+li {
+  list-style-type: none;
 }
 
-.micro_padding {
-  padding: 1rem;
+.text-align-left {
+  text-align: left
 }
+
+.text-align-right {
+  text-align: right
+}
+
+.menu-icon {
+  margin: .9rem 0;
+}
+

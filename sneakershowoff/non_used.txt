@@ -28,3 +28,10 @@
 <br>
 
 <%= link_to 'New Sneaker', new_sneaker_path %>
+
+<p><%= link_to 'Show', make %></p>
+<p><%= link_to 'Edit', edit_make_path(make) %></p>
+<p><%= link_to 'Destroy', make, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+
+<p><%= make.name %></p>
+<p><%= make.discription %></p>

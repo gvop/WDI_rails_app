@@ -2,30 +2,25 @@
 
 <h1>Listing Makes</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Discription</th>
-      <th>Picture Link</th>
-      <th colspan="4"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+  <div class="row">
     <% @makes.each do |make| %>
-      <tr>
-        <td><%= make.name %></td>
-        <td><%= make.discription %></td>
-        <td><%= make.image %></td>
-        <td><%= link_to 'Show', make %></td>
-        <td><%= link_to 'Edit', edit_make_path(make) %></td>
-        <td><%= link_to 'Destroy', make, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+    <%= link_to(make) do %>
+      <div>
+        <div class="small-6 large-3 inline-block">
+          <p><%= image_tag make.image %></p>
+        </div>
+      </div>
+      <div class="row">
+        <% make.sneakers.first(4).each do |value| %>
+          <div class="small-2 large-2 inline-block">
+            <%= image_tag value.image %>
+          </div>
+        <% end %>
+      </div>
     <% end %>
-  </tbody>
-</table>
-
+    <hr>
+    <% end %>
+  </div>
 <br>
 
 <%= link_to 'New Make', new_make_path %>

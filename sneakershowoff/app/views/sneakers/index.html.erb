@@ -1,12 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Sneakers</h1>
+<h1>Last new added</h1>
   <div class="row">
     <% @sneakers.each do |sneaker| %>
       <%= link_to(sneaker) do %>
-        <div class="large-4 columns">
+        <div class="small-12 large-4 columns text-align-left">
           <div class="th sneaker_callout" style="background-image:url(<%= sneaker.image %>)"></div>
-          <img src="https://d30y9cdsu7xlg0.cloudfront.net/png/106005-200.png">
+          <%= image_tag "106005-200.png", class: "sneaker_icon"%>
         </div>
       <% end %>
     <% end %>

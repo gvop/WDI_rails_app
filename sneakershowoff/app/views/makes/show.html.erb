@@ -1,18 +1,26 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @make.name %>
-</p>
+<h4>Brand name</h4>
+<p><%= @make.name %></p>
 
-<p>
-  <strong>Discription:</strong>
-  <%= @make.discription %>
-</p>
+<h4>Brand discription</h4>
+<p><%= @make.discription %></p>
 
-<p>
- <%= image_tag @make.image %> 
-</p>
+<h4>Logo</h4>
+<p><%= image_tag @make.image %></p>
+
+
+<div class="row">
+  <% @make.sneakers.order("created_at desc").each do |sneaker| %>
+    <%= link_to(sneaker) do %>
+      <div class="small-12 large-4 columns text-align-left">
+        <div class="th sneaker_callout" style="background-image:url(<%= sneaker.image %>)"></div>
+        <%= image_tag "106005-200.png", class: "sneaker_icon"%>
+      </div>
+    <% end %>
+    
+  <% end %>
+</div>
 
 <%= link_to 'Edit', edit_make_path(@make) %> |
 <%= link_to 'Back', makes_path %>

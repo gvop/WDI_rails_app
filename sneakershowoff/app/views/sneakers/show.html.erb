@@ -34,5 +34,7 @@
   <%= @sneaker.discription %>
 </p>
 
-<%= link_to 'Edit', edit_sneaker_path(@sneaker) %> |
-<%= link_to 'Back', sneakers_path %>
+<p><%= link_to 'Edit', edit_sneaker_path(@sneaker) %></p>
+<p><%= link_to 'Destroy', @sneaker, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+<h4><%= link_to 'Back', sneakers_path %></h4>
+

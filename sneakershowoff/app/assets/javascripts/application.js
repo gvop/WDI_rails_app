@@ -16,6 +16,7 @@ function menuHide(){
   var $menu = $('#menu')
   $menu.hide()
   $('#hamburger').on("click", function(){
+    console.log("click")
     $menu.slideToggle()
   })
 }
@@ -24,8 +25,8 @@ function menuHide(){
 
 // functions
 
-$(document).ready(readyPage)
-$(document).on('page:load', menuHide)
+// $(document).ready(readyPage)
+// $(document).on('page:load', menuHide)
 
 
 

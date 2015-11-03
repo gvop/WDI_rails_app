@@ -5,45 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
-    <link href='https://fonts.googleapis.com/css?family=Raleway:400,300,500' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,300,500,700' rel='stylesheet' type='text/css'>
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
   </head>
-  <header>
-  <nav>
-    <div class="row">
-    <%= link_to(sneakers_path) do %>
-      <li><h1 class="small-10 large-6 columns text-align-left">//SNEAKERS</h1></li>
-    <% end %>
-      <li class="small-2 large-6 columns text-align-right" id="hamburger">
-      <%= image_tag "menu_hamburger.png", class: 'menu-icon'%></li>
-    </div>
-    <hr>
-    <div id="menu">
-      <ul class="row">
-        <li><%= link_to 'Sneakers', sneakers_path, class: 'button' %></li>
-        <li><%= link_to 'Brands', makes_path, class: 'button' %></li>
-        <li><%= link_to 'Users', users_path, class: 'button' %></li>
-      </ul>
-      <ul class="row">
-        <% if current_user %>
-           <li><%= link_to "Log out", destroy_user_session_path, method: :delete, class: 'button secondary' %></li>
-           <li><%= link_to "Edit account", edit_user_registration_path, class: 'button secondary' %></li>
-        <% else %>
-           <li><%= link_to "Sign In", new_user_session_path, class: 'button secondary' %></li>
-           <li><%= link_to "Register", new_user_registration_path, class: 'button secondary' %></li>
-        <% end %>
-      </ul>
-      <hr>
-    </div>
-  </nav>
-  </header>
-
+  
   <body class="row">
 
-  
+    <%= render "header" %>  
 
     <%= yield %>
 

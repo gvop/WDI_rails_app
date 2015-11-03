@@ -3,6 +3,7 @@
 <h1>Last new added</h1>
   <div class="row">
     <% @sneakers.each do |sneaker| %>
+
       <%= link_to(sneaker) do %>
         <div class="small-12 large-4 columns text-align-left">
           <div class="th sneaker_callout" style="background-image:url(<%= sneaker.image %>)"></div>

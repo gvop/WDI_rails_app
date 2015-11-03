@@ -6,6 +6,6 @@ class Sneaker < ActiveRecord::Base
   belongs_to :make
   mount_uploader :image, ImageUploader
 
-
-  default_scope -> { where(created_at: :asc) }
+  default_scope -> { order ('cached_votes_up DESC')}
+  default_scope -> { limit (10) }
 end

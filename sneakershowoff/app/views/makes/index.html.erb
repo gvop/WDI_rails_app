@@ -11,10 +11,12 @@
           <% make.sneakers.each do |value| %>
            <% @sum += value.get_upvotes.size.to_i %>
           <% end %>
-          <% if @sum >1 %>
-          <p><%="This brand has #{@sum} likes"%></p>
+          <% if @sum == 0 %>
+          <p><%="#{make.name} has not like yet :-("%></p>
+          <% elsif @sum >1 %>
+          <p><%="#{make.name} has #{@sum} likes"%></p>
           <% else %>
-          <p><%="This brand has #{@sum} like"%></p>
+          <p><%="#{make.name} has #{@sum} like"%></p>
           <% end %>
         </div>
       </div>

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'sneaker/frontpage'
+
   root "sneakers#index"
 
   resources :sneakers do 

@@ -2,11 +2,13 @@ class SneakersController < ApplicationController
   before_action :set_sneaker, only: [:show, :edit, :update, :destroy, :upvote]
   before_action :authenticate_user!, :except => [:index]
 
+
   def index
     @sneakers = Sneaker.all
   end
 
   def show
+    @comments = @sneaker.comments
   end
 
   def new

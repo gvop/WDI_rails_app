@@ -35,20 +35,25 @@
 </p>
 
 <p>
+  <%= link_to like_sneaker_path(@sneaker), method: :put, class: "button" do %>
+    <span><%= @sneaker.get_upvotes.size %></span>
+  <% end %>
 
-<%= link_to like_sneaker_path(@sneaker), method: :put, class: "button" do %>
-  <span><%= @sneaker.get_upvotes.size %></span>
-<% end %>
+  <% @sneaker.get_upvotes.each do |vote| %>
+  <p>
+    <%= vote.voter.email %>
+  </p>
+  <% end %>
+</p>
 
-<% @sneaker.get_upvotes.each do |vote| %>
 <p>
-  <%= vote.voter.email %>
+  <%= render partial: 'comments/form', locals: { commentable: @sneaker } %>
 </p>
-<% end %>
 
-
-
+<p>
+<%= render partial: 'comments/comment', collection: @comments, locals: { commentable: @sneaker } %>
 </p>
+
 <p><%= link_to 'Edit', edit_sneaker_path(@sneaker) %></p>
 <p><%= link_to 'Destroy', @sneaker, method: :delete, data: { confirm: 'Are you sure?' } %></p>
 <h4><%= link_to 'Back', sneakers_path %></h4>

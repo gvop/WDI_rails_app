@@ -9,14 +9,14 @@
         <div class="small-6 large-3 inline-block">
           <% @sum = 0 %>
           <% make.sneakers.each do |value| %>
-           <% @sum += value.get_upvotes.size.to_i %>
+            <% @sum += value.get_upvotes.size.to_i %>
           <% end %>
           <% if @sum == 0 %>
-          <p><%="#{make.name} has not like yet :-("%></p>
+            <p><%="#{make.name} has not like yet :-("%></p>
           <% elsif @sum >1 %>
-          <p><%="#{make.name} has #{@sum} likes"%></p>
+            <p><%="#{make.name} has #{@sum} likes"%></p>
           <% else %>
-          <p><%="#{make.name} has #{@sum} like"%></p>
+            <p><%="#{make.name} has #{@sum} like"%></p>
           <% end %>
         </div>
       </div>
@@ -32,5 +32,8 @@
     <% end %>
   </div>
 <br>
+
+
+
 
 <%= link_to 'New Make', new_make_path %>

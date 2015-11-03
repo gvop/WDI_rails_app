@@ -2,29 +2,20 @@ class MakesController < ApplicationController
   before_action :set_make, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
 
-
-  # GET /makes
-  # GET /makes.json
   def index
     @makes = Make.all
   end
 
-  # GET /makes/1
-  # GET /makes/1.json
   def show
   end
 
-  # GET /makes/new
   def new
     @make = Make.new
   end
 
-  # GET /makes/1/edit
   def edit
   end
 
-  # POST /makes
-  # POST /makes.json
   def create
     @make = Make.new(make_params)
 
@@ -39,8 +30,6 @@ class MakesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /makes/1
-  # PATCH/PUT /makes/1.json
   def update
     respond_to do |format|
       if @make.update(make_params)
@@ -53,8 +42,6 @@ class MakesController < ApplicationController
     end
   end
 
-  # DELETE /makes/1
-  # DELETE /makes/1.json
   def destroy
     @make.destroy
     respond_to do |format|

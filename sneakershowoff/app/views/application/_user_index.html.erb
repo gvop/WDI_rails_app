@@ -1,0 +1,12 @@
+
+<% @users.each do |user| %>
+  <%= link_to(user) do %>
+    <div class="row extra_margin">
+        <div class="small-1 large-1 columns profile_photo_container"style="background-image:url(<%= user.image %>)"></div>
+        <span class="small-10 large-10 columns first_uppercase info"><%= user.username %> <br>Most active!</span>
+
+    </div>
+  <% end %>
+<hr>
+<% end %>
+

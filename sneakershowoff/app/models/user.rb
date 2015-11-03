@@ -5,5 +5,6 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   has_many :sneakers
   has_many :comments
+  mount_uploader :image, ImageUploader
   acts_as_voter
 end

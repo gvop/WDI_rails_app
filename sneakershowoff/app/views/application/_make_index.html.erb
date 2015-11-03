@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Makes</h1>
+
+  <div class="row">
+    <% @makes.each do |make| %>
+    <%= link_to(make) do %>
+      <div>
+        <div class="small-6 large-3 inline-block">
+          <% @sum = 0 %>
+          <% make.sneakers.each do |value| %>
+            <% @sum += value.get_upvotes.size.to_i %>
+          <% end %>
+          <% if @sum == 0 %>
+            <p><%="#{make.name} has not like yet :-("%></p>
+          <% elsif @sum >1 %>
+            <p><%="#{make.name} has #{@sum} likes"%></p>
+          <% else %>
+            <p><%="#{make.name} has #{@sum} like"%></p>
+          <% end %>
+        </div>
+      </div>
+      <div class="row">
+        <% make.sneakers.first(4).each do |value| %>
+          <div class="small-2 large-2 inline-block">
+            <%= image_tag value.image %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+    <hr>
+    <% end %>
+  </div>
+<br>
+
+
+
+
+<%= link_to 'New Make', new_make_path %>

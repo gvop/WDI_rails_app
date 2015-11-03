@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
-  get 'sneaker/frontpage'
 
-  root "sneakers#index"
+  root "general#front"
 
   resources :sneakers do 
     member do 

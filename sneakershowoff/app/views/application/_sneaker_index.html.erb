@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="small-6 large-8 columns">
+    <h1>Top rated!</h1>
+  </div>
+  <div class="small-6 large-4 columns">
+    <div class="button info upload_button">
+      <%= link_to 'Add a new ', new_sneaker_path  %>
+    </div>
+  </div>
+</div>
+  <div class="row">
+    <% @sneakers.each do |sneaker| %>
+      <%= link_to(sneaker) do %>
+        <div class="small-12 large-4 columns text-align-left">
+          <div class="th sneaker_callout" style="background-image:url(<%= sneaker.image %>)">
+          </div>
+          <div class="margin-bottom">
+            <%= link_to like_sneaker_path(sneaker), method: :put, class: "" do %>
+            <%= image_tag "106005-200.png", class: "sneaker_icon"%>
+              <% @number = sneaker.get_upvotes.size %>
+              <span class="vote"> <%= "This sneaker has #{@number} likes!" %></span>
+          <% end %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+<br>

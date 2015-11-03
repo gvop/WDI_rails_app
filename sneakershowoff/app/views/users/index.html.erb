@@ -1,17 +1,1 @@
-<h1>Users</h1>
-<hr>
-
-<% @users.each do |user| %>
-  <%= link_to(user) do %>
-    <div class="row">
-        <p><%= user.email %></p>
-        <% user.sneakers.first(4).each do |sneaker| %>
-        <div class="small-2 large-2 inline-block">
-            <%= image_tag sneaker.image %>
-        </div>
-        <% end %>
-    </div>
-  <% end %>
-<hr>
-<% end %>
-
+<%= render "user_index" %>  

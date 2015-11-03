@@ -2,16 +2,20 @@
 
 
 <div class="row">
-  <%= link_to(sneakers_path) do %>
+  <%= link_to(root_path) do %>
     <h1 class="small-8 large-9 columns text-align-left">//SNEAKERS</h1>
   <% end %>
   <% if current_user %>
-    <%= link_to "Log out", destroy_user_session_path, method: :delete, class: 'small-3 large-2 columns text-align-centre button tiny nav_button_margin'%>
+  <%= link_to(current_user) do %>
+    <div class="profile_photo_container_top small-3 large-2 columns"style="background-image:url(<%= current_user.image %>)"></div>
+  <% end %>
     <% else %>
     <%= link_to "Sign In", new_user_session_path, class: 'small-3 large-2 columns text-align-centre button tiny nav_button_margin' %>
     <% end %>
 </div>
 <hr class="top_hr">
+
+
 
 <nav>
   <div id="menu">

@@ -41,6 +41,28 @@ body {
   margin-left: .8rem;
 }
 
+//Users profile
+
+.profile_photo_container_top {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  background-size: cover;
+  border-radius: 50px;
+  margin-left: 4.5rem;
+  margin-top: .25rem;
+}
+
+.profile_photo_container{
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  background-size: cover;
+  border-radius: 50px;
+  // margin-left: 4.5rem;
+  margin-top: .25rem;
+}
+
 // DRY
 
 .top_hr {
@@ -84,7 +106,33 @@ li {
 }
 
 .upload_button {
-  font-weight: 700;
-  margin-top: 1rem;
+  font-weight: 300;
+  margin-top: .5rem;
+  margin-left: 4.7rem;
+  padding: 10px;
+  border: 0px;
+  color: white;
 }
+
+//User Page
+
+.first_uppercase::first-letter{
+  text-transform: uppercase;
+}
+
+.extra_margin {
+  margin: 1rem !important;
+}
+
+.info {
+  margin-top: 6px;
+}
+
+
+
+
+
+
+
+
 

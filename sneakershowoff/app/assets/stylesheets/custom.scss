@@ -45,11 +45,11 @@ body {
 
 .profile_photo_container_top {
   display: inline-block;
+  position: relative;
   width: 50px;
   height: 50px;
   background-size: cover;
   border-radius: 50px;
-  margin-left: 4.5rem;
   margin-top: .25rem;
 }
 
@@ -64,6 +64,11 @@ body {
 }
 
 // DRY
+
+.font-page-title {
+  margin: 4rem 0 2rem;
+}
+
 
 .top_hr {
   margin-top: 2px;
@@ -108,10 +113,14 @@ li {
 .upload_button {
   font-weight: 300;
   margin-top: .5rem;
-  margin-left: 4.7rem;
   padding: 10px;
   border: 0px;
   color: white;
+
+  i {
+    color: #008CBA;
+    padding: 5px 5px 0px 0px;
+  }
 }
 
 //User Page
@@ -128,6 +137,30 @@ li {
   margin-top: 6px;
 }
 
+
+//Make logo
+
+.make-logo{
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  background-position: right;
+}
+
+footer {
+  text-align: center;
+  background-color: white;
+  margin: -10px;
+  padding: 15px;
+
+  h4 {
+    color: black;
+  }
+
+  i {
+    color: black;
+    padding: 0 1rem;
+  }
+}
 
 
 

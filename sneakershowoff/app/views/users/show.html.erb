@@ -18,7 +18,7 @@
 
 <hr>
 
-
+<%= link_to "log out", destroy_user_session_path, method: :delete, class: 'small-3 large-2 columns text-align-centre button tiny nav_button_margin'%>
 <h3>This users sneakers!</h3>
 <div class="row">
   <% @user.sneakers.order("created_at desc").each do |sneaker| %>

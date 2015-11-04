@@ -6,8 +6,10 @@
     <h1 class="small-8 large-9 columns text-align-left">//SNEAKERS</h1>
   <% end %>
   <% if current_user %>
-  <%= link_to(current_user) do %>
-    <div class="profile_photo_container_top small-3 large-2 columns"style="background-image:url(<%= current_user.image %>)"></div>
+    <div class=" small-4 large-3 columns text-align-right">
+      <%= link_to(current_user) do %>
+      <div class="profile_photo_container_top"style="background-image:url(<%= current_user.image %>)"></div>
+    </div>
   <% end %>
     <% else %>
     <%= link_to "Sign In", new_user_session_path, class: 'small-3 large-2 columns text-align-centre button tiny nav_button_margin' %>

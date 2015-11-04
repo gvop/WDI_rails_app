@@ -58,8 +58,6 @@ class SneakersController < ApplicationController
     redirect_to :back
   end
 
-  
-
   private
 
     def set_sneaker

@@ -1,5 +1,6 @@
 
 <% @users.each do |user| %>
+<hr>
   <%= link_to(user) do %>
     <div class="row extra_margin">
         <div class="small-1 large-1 columns profile_photo_container"style="background-image:url(<%= user.image %>)"></div>
@@ -7,6 +8,6 @@
 
     </div>
   <% end %>
-<hr>
+
 <% end %>
 

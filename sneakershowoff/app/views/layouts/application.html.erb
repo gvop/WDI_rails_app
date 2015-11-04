@@ -6,6 +6,7 @@
 
     <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
     <link href='https://fonts.googleapis.com/css?family=Raleway:400,300,500,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
@@ -17,6 +18,16 @@
     <%= render "header" %>  
 
     <%= yield %>
+
+    <footer>
+    <hr>
+      <h4>//SNEAKERS</h4>
+      <br>
+      <i class="fa fa-facebook-official fa-2x"></i>
+      <i class="fa fa-twitter fa-2x"></i>
+      <i class="fa fa-tumblr fa-2x"></i>
+      <i class="fa fa-youtube fa-2x"></i>
+    </footer>
 
   </body>
 </html>

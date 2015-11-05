@@ -3,7 +3,7 @@ class MakesController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @makes = Make.all
+    @makes = Make.most_popular
   end
 
   def show

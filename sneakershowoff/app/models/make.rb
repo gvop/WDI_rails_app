@@ -2,9 +2,13 @@ class Make < ActiveRecord::Base
   mount_uploader :image, ImageUploader
   has_many :sneakers
 
-  default_scope -> { order ('name ASC')}
-  default_scope -> { limit (10) }
+  default_scope -> { order('name ASC').limit(10) }
 
+  def self.most_popular
+    all.sort do |make1, make2| 
+      make2.total_likes <=> make1.total_likes
+    end
+  end
 
   def latest
     sneakers.order("created_at desc")

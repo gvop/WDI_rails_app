@@ -1,7 +1,7 @@
-<li>
-  <ul>
-    <li><%= comment.user.try(:username) %></li>
-    <li><%= comment.comment %></li>
-    <li><%= link_to 'Delete Comment', comment_path(comment, commentable_type: commentable.class.to_s.underscore, commentable_id: commentable.id), method: :delete, data: { confirm: 'Are you sure?' } %></li>
-  </ul>
-</li> 
+<fieldset>
+  <legend><%= comment.user.try(:username) %></legend>
+    <ul>
+      <li><%= comment.comment %></li>
+      <li><h6><%= link_to 'Delete', comment_path(comment, commentable_type: commentable.class.to_s.underscore, commentable_id: commentable.id), method: :delete, data: { confirm: 'Are you sure?' } %></h6></li>
+    </ul>
+</fieldset>

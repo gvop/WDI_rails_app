@@ -1,8 +1,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require foundation
-//= require turbolinks
 //= require_tree .
+//= require_self
 
 $(function(){ $(document).foundation(); });
 
@@ -20,13 +20,3 @@ function menuHide(){
     $menu.slideToggle()
   })
 }
-
-
-
-// functions
-
-// $(document).ready(readyPage)
-// $(document).on('page:load', menuHide)
-
-
-

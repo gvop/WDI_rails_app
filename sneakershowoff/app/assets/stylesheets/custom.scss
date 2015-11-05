@@ -1,12 +1,11 @@
 body {
-
-  header {
-    text-align: center;
-  }
-
   // text-align: center;
   padding: 5px;
   overflow-x:hidden;
+
+  header {
+    text-align: left;
+  }
 
   nav ul {
     li{
@@ -137,6 +136,9 @@ li {
   margin-top: 6px;
 }
 
+.micro-margin {
+  margin-left: 16px;
+}
 
 //Make logo
 
@@ -162,8 +164,52 @@ footer {
   }
 }
 
+#small-pics {
+  background-position: center;
+  background-size: cover;
+  padding: 2.5rem 2rem;
+}
 
+#user-pic {
+  margin-top: .8rem;
+}
 
+.no-paddig {
+  padding: 0 !important;
+}
+
+.no-margin {
+  margin: 0 !important;
+}
+.float-right {
+  float: right;
+}
+
+img {
+  width: 100%;
+}
+
+.bold {
+  font-weight: 500;
+}
+
+.comment-box {
+  border: 1px black solid;
+  padding: 5px;
+}
+
+.vote {
+  color: #008CBA;
+}
+
+.border{
+  margin: 6rem 0;
+}
+
+.user-name-padding{
+  margin-top: 1.5rem;
+  color: #008CBA;
+}
 
 
 

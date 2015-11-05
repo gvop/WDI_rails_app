@@ -1,0 +1,18 @@
+
+<% @users.each do |user| %>
+  <% if user.username != "admin" %>
+  <hr>
+    <%= link_to(user) do %>
+      <div class="row extra_margin">
+          <div id="user-pic" class="small-1 large-1 columns profile_photo_container th "style="background-image:url(<%= user.image %>)"></div>
+          <div class="th small-10 large-10 columns no-paddig">
+            <% user.sneakers.first(4).each do |sneaker| %>
+                <div id="small-pics" class="small-3 large-3 columns" style="background-image:url(<%= sneaker.image %>)">
+                </div>
+            <% end %>
+          </div> 
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+

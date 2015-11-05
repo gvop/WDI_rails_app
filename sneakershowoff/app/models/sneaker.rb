@@ -7,5 +7,5 @@ class Sneaker < ActiveRecord::Base
   mount_uploader :image, ImageUploader
 
   default_scope -> { order ('cached_votes_up DESC')}
-  default_scope -> { limit (10) }
+  default_scope -> { limit (12) }
 end

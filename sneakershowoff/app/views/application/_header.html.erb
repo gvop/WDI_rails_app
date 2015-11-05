@@ -12,14 +12,16 @@
     </div>
   <% end %>
     <% else %>
-    <%= link_to "Sign In", new_user_session_path, class: 'small-3 large-2 columns text-align-centre button tiny nav_button_margin' %>
+    <div class=" small-4 large-3 columns text-align-right">
+    <%= link_to "Sign In", new_user_session_path, class: 'text-align-right button tiny' %>
+    </div>
     <% end %>
 </div>
 <hr class="top_hr">
 
 
 
-<nav>
+<nav class="extra_margin">
   <div id="menu">
     <ul class="row">
       <li><%= link_to 'Sneakers', sneakers_path, class: 'button' %></li>

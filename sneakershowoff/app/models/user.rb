@@ -7,4 +7,7 @@ class User < ActiveRecord::Base
   has_many :comments
   mount_uploader :image, ImageUploader
   acts_as_voter
+
 end
+
+

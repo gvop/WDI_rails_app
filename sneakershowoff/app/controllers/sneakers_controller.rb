@@ -54,6 +54,15 @@ class SneakersController < ApplicationController
   end
 
   def upvote
+    if request.xhr?
+      count = @sneaker.get_upvotes.size
+      @sneaker.upvote_by current_user
+      new_count = @sneaker.get_upvotes.size
+
+      return render json: true if count != new_count
+      return render json: false
+    end
+
     @sneaker.upvote_by current_user
     redirect_to :back
   end

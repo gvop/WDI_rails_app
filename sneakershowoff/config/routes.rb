@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'admin/admin_page'
+
   root "general#front"
 
   resources :sneakers do 

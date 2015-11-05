@@ -1,37 +1,39 @@
 body {
-  // text-align: center;
+
   padding: 5px;
   overflow-x:hidden;
 
-  header {
-    text-align: left;
-  }
+    header {
+      text-align: left;
+    }
 
-  nav ul {
-    li{
+    nav ul {
+
+      li{
+        display: inline-block;
+      }
+
+    }
+
+    .inline-block {
       display: inline-block;
     }
-  }
 
-  .inline-block {
-    display: inline-block;
-  }
+    .sneaker_callout {
+      display: inline-block;
+      width: 100%;
+      padding: 8rem 0 8rem;
+      background-size: cover;
+      background-position: center;
+    }
 
-  .sneaker_callout {
-    display: inline-block;
-    width: 100%;
-    padding: 8rem 0 8rem;
-    background-size: cover;
-    background-position: center;
-  }
+    .micro_padding {
+      padding: 1rem;
+    }
 
-  .micro_padding {
-    padding: 1rem;
-  }
-
-  .sneaker_icon {
-    width: 50px;
-  }
+    .sneaker_icon {
+      width: 50px;
+    }
 }
 
 //NAV
@@ -211,6 +213,9 @@ img {
   color: #008CBA;
 }
 
+.top-margin{
+  margin-top: 1.2rem;
+}
 
 
 

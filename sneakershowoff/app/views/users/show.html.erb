@@ -1,11 +1,10 @@
 <h2>Welcome at <%= @user.username %>'s profile</h2>
 <br>
 
-<h3>Sneaker this  <%= @user.username %> likes:</h3>
+<h3><%= @user.username %> likes <%= @user.find_voted_items.count %> sneakers:</h3>
 <hr>
 
 <div class="row">
-  <p>This user has liked: <%= @user.find_voted_items.count %></p>
   <% @user.find_voted_items.each do |vote| %>
   <div class="small-2 large-2 inline-block">
     <%= link_to sneaker_path(vote) do %>

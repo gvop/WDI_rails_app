@@ -24,6 +24,6 @@
   <%= render @user.sneakers.order("created_at desc") %>
   <hr>
   
-  <%= link_to "Edit profile", edit_user_password_path(@user), class: 'button tiny nav_button_margin'%>
+  <%= link_to "Edit profile", edit_user_registration_path(@user), class: 'button tiny nav_button_margin'%>
   <%= link_to "log out", destroy_user_session_path, method: :delete, class: 'button tiny nav_button_margin'%>
 </div>

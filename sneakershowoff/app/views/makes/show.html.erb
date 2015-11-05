@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <div class="row">
   <div class="small-8 large-8 columns">
     <h4 class="bold">Brand name</h4>
@@ -12,30 +10,12 @@
 
 <h4 class="bold">Brand discription</h4>
 <p><%= @make.discription %></p>
-
 <br>
+
 <h4 class="bold">Sneakers</h4>
 <hr>
 <br>
+
 <div class="row">
-  <% @make.sneakers.order("created_at desc").each do |sneaker| %>
-
-    <%= link_to(sneaker) do %>
-      <div class="small-12 medium-6 large-4 columns text-align-left">
-      <div class="th sneaker_callout" style="background-image:url(<%= sneaker.image %>)"></div>
-    <% end %>
-
-      <div class="margin-bottom">
-        <%= link_to like_sneaker_path(sneaker), class: "like-button" do %>
-          <%= image_tag "106005-200.png", class: "sneaker_icon"%>  
-        <% end %>
-      
-      <% @number = sneaker.get_upvotes.size %>
-      <span class="vote">This sneaker has <span class="vote-count"><%= "#{@number}" %></span> likes!</span>
-      </div>
-    </div>
-    
-  <% end %>
+  <%= render @make.latest %>
 </div>
-
-

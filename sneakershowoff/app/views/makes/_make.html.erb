@@ -1,0 +1,18 @@
+<%= link_to(make) do %>
+  <div class="make-logo extra_margin" style="background-image:url(<%= make.image %>)">
+    <div class="small-6 large-3 inline-block">
+    <h3 class="bold"><%= make.name %></h3>
+      <p><%= pluralize(make.total_likes, "like") %></p>
+    </div>
+  </div>
+
+  <div class="row extra_margin">
+    <h4>Fresh in</h4>
+    <% make.fresh_in.each do |sneaker| %>
+      <div class="small-2 large-2 inline-block">
+        <%= image_tag sneaker.image %>
+      </div>
+    <% end %>
+  </div>
+<% end %>
+<hr>

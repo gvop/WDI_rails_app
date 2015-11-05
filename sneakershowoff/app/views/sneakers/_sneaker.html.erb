@@ -1,10 +1,14 @@
-<%= link_to(sneaker) do %>
-  <div class="small-12 large-4 columns text-align-left">
-    <div class="th sneaker_callout" style="background-image:url(<%= sneaker.image %>)"></div>
-
-    <%= link_to like_sneaker_path(sneaker), method: :put, class: "margin-bottom" do %>
-      <span class="vote"><%= sneaker.get_upvotes.size %></span>
-      <%= image_tag "106005-200.png", class: "sneaker_icon"%>
-    <% end %>
+<div class="small-12 medium-6 large-4 columns text-align-left">
+  <%= link_to(sneaker) do %>
+  <div class="th sneaker_callout" style="background-image:url(<%= sneaker.image %>)">
   </div>
-<% end %>
+  <% end %>
+
+  <div class="margin-bottom">
+    <%= link_to like_sneaker_path(sneaker), class: "like-button" do %>
+    <%= image_tag "106005-200.png", class: "sneaker_icon"%>  
+    <% end %>
+    
+    <span class="vote">This sneaker has <span class="vote-count"><%= "#{sneaker.number_of_votes}" %></span> likes!</span>
+  </div>
+</div>

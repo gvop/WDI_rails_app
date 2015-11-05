@@ -2,67 +2,44 @@
 
 <p>
   <strong>Type:</strong>
-
   <%= @sneaker.type_of %>
-
   <br>
 
   <strong>Uploaded by:</strong>
-
   <%= @sneaker.user.username %>
-
   <br>
 
   <strong>Make:</strong>
-
   <%= @sneaker.make.name %>
-
 </p>
 
 <div class="row">
-
   <div class="small-12 medium-6 large-4 columns">
-
    <%= image_tag @sneaker.image %>
-
-   </div> 
-
+   </div>
 </div>
-
 <br>
 
 <p>
   <strong>Discription:</strong>
-
   <%= @sneaker.discription %>
-
 </p>
 
 <p>
-
-<hr>
-
+  <hr>
   <div class="margin-bottom">
-
     <%= link_to like_sneaker_path(@sneaker), class: "like-button" do %>
       <%= image_tag "106005-200.png", class: "sneaker_icon"%>  
     <% end %>
   
-  <% @number = @sneaker.get_upvotes.size %>
-
-  <span class="vote">This sneaker has <span class="vote-count"><%= "#{@number}" %></span> likes!</span>
-
+    <span class="vote">This sneaker has <span class="vote-count"><%= "#{@sneaker.number_of_votes}" %></span> likes!</span>
   </div>
+</p>
 
-</div>
 <p>
-
   <% @sneaker.get_upvotes.each do |vote| %>
-
     <%= vote.voter.username %>,
-
   <% end %><span> have liked this sneaker!</span>
-
 </p>
 
 <h3 class="bold">Comments</h3>
@@ -76,7 +53,7 @@
 <div class="row">
   <div class="small-12 medium-6 large-4 columns">
     <%= render partial: 'comments/form', locals: { commentable: @sneaker } %>
-    </div>
+  </div>
 </div>
 
 

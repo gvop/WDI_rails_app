@@ -1,54 +1,47 @@
 <% if current_user.role ==  "administrator"%>
-<h2>Admin Part</h2>
+  <h2>Admin Part</h2>
 
-<h3 class="bold">Users</h3>
-<hr>
+  <h3 class="bold">Users</h3>
+  <hr>
+    <% @users.each do |user| %>
+      <h5 class="first_uppercase"><%= link_to user.username, user %></h5>
+    <% end %>
+  <br>
 
-  <% @users.each do |user| %>
-    <h5 class="first_uppercase"><%= link_to user.username, user %></h5>
-  <% end %>
+  <h4>Sneakers</h4>
+  <hr>
 
-<br>
-
-<h4>Sneakers</h4>
-<hr>
-
-<div class="row">
-
-  <% @sneakers.each do |sneaker| %>
-
-    <div class="small-12 medium-6 large-4 columns text-align-left">
-
-      <%= link_to(sneaker) do %>
-
-      <div class="th sneaker_callout" style="background-image:url(<%= sneaker.image %>)"></div>
-
-      <% end %>
-      <p><%= link_to 'Edit', edit_sneaker_path(sneaker) %></p>
-      <p><%= link_to 'Destroy', sneaker, method: :delete, data: { confirm: 'Are you sure?' } %></p>
-    </div>
-  <% end %>
-</div>
-
-<br>
-
-<h4>Make</h4>
-<hr>
-
-<div class="row">
-  <% @makes.each do |make| %>
-  <%= link_to(make) do %>
-    <div class="make-logo extra_margin" style="background-image:url(<%= make.image %>)">
-      <div class="small-6 large-3 inline-block">
-      <h5 class="bold"><%= make.name %></h5>
-      <hr>
-      <p><%= link_to 'Edit', edit_sneaker_path(make) %></p>
-      <p><%= link_to 'Destroy', make, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+  <div class="row">
+    <% @sneakers.each do |sneaker| %>
+      <div class="small-12 medium-6 large-4 columns text-align-left">
+        <%= link_to(sneaker) do %>
+          <div class="th sneaker_callout" style="background-image:url(<%= sneaker.image %>)">
+          </div>
+        <% end %>
+        <p><%= link_to 'Edit', edit_sneaker_path(sneaker) %></p>
+        <p><%= link_to 'Destroy', sneaker, method: :delete, data: { confirm: 'Are you sure?' } %></p>
       </div>
-    </div>
-  <% end %>
-<% end %>
+    <% end %>
+  </div>
+  <br>
+
+  <h4>Make</h4>
+  <hr>
+
+  <div class="row">
+    <% @makes.each do |make| %>
+      <%= link_to(make) do %>
+        <div class="make-logo extra_margin" style="background-image:url(<%= make.image %>)">
+          <div class="small-6 large-3 inline-block">
+            <h5 class="bold"><%= make.name %></h5>
+            <hr>
+            <p><%= link_to 'Edit', edit_sneaker_path(make) %></p>
+            <p><%= link_to 'Destroy', make, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
 
 <% else %>
-    <h3>You don't have acces to this part of the website</h3>
+  <h3>You don't have acces to this part of the website</h3>
 <% end %>

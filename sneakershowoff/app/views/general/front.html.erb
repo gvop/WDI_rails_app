@@ -4,11 +4,6 @@
 <h2 class="font-page-title">Top brands</h2>
 <%= render "make_index" %>  
 
-<% @comments.each do |content| %>
-<p>
-  <span class="blue bold"><%= link_to content.user.username %></span>
-  <%= content.comment %>
-</p>
-<% end %>
+
 
 

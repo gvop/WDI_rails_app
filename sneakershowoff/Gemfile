@@ -28,7 +28,6 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
   gem 'brakeman', :require => false # Gem to test app for security flaws
-  gem 'bullet' # Check for n+1 sql queries 
 end
 
 group :development do

@@ -1,0 +1,23 @@
+<nav class="extra_margin">
+  <div id="menu">
+  <div class="row">
+    <ul class="small-12 medium-7 large-6 columns no-paddig">
+      <li><%= link_to 'Sneakers', sneakers_path, class: 'button' %></li>
+      <li><%= link_to 'Brands', makes_path, class: 'button' %></li>
+      <li><%= link_to 'Users', users_path, class: 'button' %></li>
+    </ul>
+    <div class="small-12 medium-5 large-6 columns no-paddig">
+      <p class="no-margin extra-bold">Last comments</p>
+      <ul id="ticker">
+        <% Comment.all.each do |content| %>
+        <li class="ticker_items">
+          <span class="blue bold"><%= link_to content.user.username, content.user %></span>
+          <%= content.comment %>
+        </li>
+        <% end %>
+      </ul>
+      <ul id="ticker_jq"></ul>
+    </div>
+  </div>
+  </div>
+</nav>

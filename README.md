@@ -1,1 +1,2 @@
-# WDI_rails_app
+# Sneaker Swop
+##An online platform for showing off your new sneakers!
